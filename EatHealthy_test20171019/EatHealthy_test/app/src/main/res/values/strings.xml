@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Eat生健康</string>
+    <string name="PersonalInformationAge">年齡</string>
+    <string name="PersonalInformationHeight">身高</string>
+    <string name="PersonalInformationWeight">體重</string>
+    <string name="Recipe1">BBQ\n食材 （2 人份） 45 分鐘 、三層肉300g 、蒜頭1顆、辣椒適量（可無）、醬油2大匙、米酒1大匙、糖10-12g、水2杯（量米杯）、青蒜苗2-3根</string>
+    <string name="Recipe2">FryChicken\n食材 （6 人份） 60 分鐘、無骨雞腿肉一公斤、雞肉的調味料、細砂糖一小湯匙、鹽巴一小湯匙、醬油兩大湯匙、大蒜一小顆、料理酒一小湯匙(可不放)、雞肉的炸粉、麵粉一大湯匙、太白粉一大湯匙、蛋一顆</string>
+    <string name="Recipe3">Tofu\n食材 30 分鐘、牛蕃茄  (偏小的番茄)4顆、中華嫩豆腐1盒、活菌豬肉絲130g、太白粉80g、蔥適量、辣豆瓣醬3匙、鵝香辣油1小匙</string>
+    <string name="Recipe4">Beef\n牛肋條／牛腱心／牛腩肉適量、牛番茄6顆、洋蔥半顆、馬鈴薯1顆、蒜米3瓣、黑胡椒適量、鹽適量</string>
+    <string name="Recipe5">Soup\n鮮蝦8隻、鮮香菇5朵、杏鮑菇1個、金針菇1包、雞蛋1顆、香菜少許、調味：鹽1小匙、調味：烏醋2大匙</string>
+    <string name="title_activity_search_proxy">Map</string>
+    <string name="banana">成分\n熱量(卡):91\n水分(克):74\n維生素A(IU):8\n維生素C(毫克):10.1\n鉀(毫克):290\n纖維質(克):1.6</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_cook_proxy">CookProxy</string>
+    <string name="title_activity_choose_food">ChooseFood</string>
+    <string name="title_activity_alter_food">更改</string>
+    <string name="title_activity_add_food">新增飲食</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_today_eat">飲食紀錄</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="title_activity_navi">Eat生健康y</string>
+    <string name="title_activity_bottom_navi">BottomNaviActivity</string>
+    <string name="title_home">健康分析</string>
+    <string name="title_chart">圖表</string>
+    <string name="title_personal_info">個人資料</string>
+    <string name="title_personal_target">目標</string>
+    <string name="title_activity_button__navi">Button_Navi</string>
+    <string name="title_activity_main">Eat生健康</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_set_personal_nurtition_ratio">營養比例選擇</string>
+    <string name="title_activity_setl_nurtition_ratio">SetlNurtitionRatio</string>
+    <string name="title_activity_personal_nurtition_ratio">PersonalNurtitionRatio</string>
+    <string name="title_activity_personl__healthy__analysis">營養日記</string>
+    <string name="title_activity_custom_food_filing">食品建檔</string>
+    <string name="title_activity_camera">Camera</string>
+    <string name="title_activity_trans">trans</string>
+</resources>

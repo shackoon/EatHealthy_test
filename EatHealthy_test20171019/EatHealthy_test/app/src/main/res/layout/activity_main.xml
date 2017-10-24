@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.admin.eathealthy.Nav.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <ImageButton
+            android:id="@+id/ImageButtonIdentityAnalysis"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/analysis" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <ImageButton
+            android:id="@+id/ImageButtonRecipe"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/platfrom" />
+
+        <ImageButton
+            android:id="@+id/ImageButtonHealthPaper"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/newspaper" />
+
+        <ImageButton
+            android:id="@+id/ImageButtonHealthNotice"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/remind" />
+
+        <ImageButton
+            android:id="@+id/ImageButtonProxy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/foundry" />
+
+        <ImageButton
+            android:id="@+id/ImageButtonRank"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:onClick="onClick"
+            android:paddingRight="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/competition" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:layout_gravity="bottom"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/ImageButtonSystemNotice"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:src="@drawable/bell" />-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/ImageButtonHome"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:src="@drawable/home" />-->
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/ImageButtonMember"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_weight="1"-->
+    <!--android:onClick="toPersonalInfomation"-->
+    <!--android:src="@drawable/member" />-->
+    <!--</LinearLayout>-->
+</LinearLayout>

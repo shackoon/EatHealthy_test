@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.admin.eathealthy.Tabbed.TodayEatActivity">
+    <item
+        android:id="@+id/action_decrease"
+        android:icon="@drawable/ic_chevron_left_black_24dp"
+        android:orderInCategory="102"
+        android:title=""
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_showDate"
+        android:orderInCategory="102"
+        android:title="@string/action_settings"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_increase"
+        android:icon="@drawable/ic_chevron_right_black_24dp"
+        android:orderInCategory="102"
+        android:title=""
+        app:showAsAction="always" />
+</menu>

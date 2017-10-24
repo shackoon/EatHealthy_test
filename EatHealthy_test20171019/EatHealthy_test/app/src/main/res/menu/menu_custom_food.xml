@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.admin.eathealthy.ChooseFood">
+    <item
+        android:id="@+id/action_custom_food"
+        android:orderInCategory="102"
+        android:title="食品建檔" />
+
+</menu>
