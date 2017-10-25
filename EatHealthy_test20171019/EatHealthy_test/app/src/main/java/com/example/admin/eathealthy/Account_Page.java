@@ -2,6 +2,7 @@ package com.example.admin.eathealthy;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.example.admin.eathealthy.Data_table.MyDBHelper;
 import com.example.admin.eathealthy.Data_table.User_Food_Data;
 import com.example.admin.eathealthy.Data_table.User_Nutritional_Goals;
 import com.example.admin.eathealthy.Data_table.User_Picture_Data;
+import com.example.admin.eathealthy.Tabbed.TodayEatActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,6 +49,17 @@ public class Account_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_page);
         imporDatabase();
+        String islogin = getSharedPreferences("Login_info", MODE_PRIVATE).getString("Account", "");
+        if (islogin != "") {
+            //Toast.makeText(this,islogin,Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, com.example.admin.eathealthy.Nav.MainActivity.class);
+            //傳值
+            Bundle bundle = new Bundle();
+            bundle.putString("Account", islogin);
+            intent.putExtras(bundle);
+            startActivity(intent);
+            finish();
+        }
 
         tab = (TabHost) findViewById(R.id.testhost);
         tab.setup();
@@ -184,6 +197,10 @@ public class Account_Page extends AppCompatActivity {
             //cv.put("Login", "yes");
             //有問題
             //db.update(Item_User_Data.TABLE_NAME, cv, "Account=" + login_ac, null);
+            SharedPreferences pref = getSharedPreferences("Login_info", MODE_PRIVATE);
+            pref.edit().putString("Account", login_ac).commit();
+
+
             Intent intent = new Intent(this, com.example.admin.eathealthy.Nav.MainActivity.class);
             //傳值
             Bundle bundle = new Bundle();
