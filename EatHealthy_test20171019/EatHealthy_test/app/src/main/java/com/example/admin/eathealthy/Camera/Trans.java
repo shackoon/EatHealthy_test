@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -26,7 +27,7 @@ import com.example.admin.eathealthy.R;
 
 import java.util.ArrayList;
 
-public class Trans extends AppCompatActivity {
+public class Trans extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private Bundle bundle;
     private byte[] img_byte;
     private String account;
@@ -43,6 +44,7 @@ public class Trans extends AppCompatActivity {
     private String diningTime;
     private String date;
     private int position;
+    private TextView tv_page;
 
 
     @Override
@@ -70,6 +72,8 @@ public class Trans extends AppCompatActivity {
 
     private void initViews() {
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        tv_page = (TextView) findViewById(R.id.tv_page);
+
         userPictures.clear();
         cursor = db.query(User_Picture_Data.TABLE_NAME + account, null, User_Picture_Data.DINING_TIME_COLUMN + "=?" + " AND " + User_Food_Data.DATE_COLUMN + "=?", new String[]{diningTime, date}, null, null, null);
         while (cursor.moveToNext()) {
@@ -78,9 +82,12 @@ public class Trans extends AppCompatActivity {
             picData = new UserPicture(pic, key_id, account, diningTime, date);
             userPictures.add(picData);
         }
+        tv_page.setText(position + 1 + "/" + userPictures.size());
         mPagerAdapter = new MyPagerAdapter(userPictures, this);
+        mViewPager.addOnPageChangeListener(this);
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setCurrentItem(position);
+
         supportStartPostponedEnterTransition();
     }
 
@@ -90,4 +97,18 @@ public class Trans extends AppCompatActivity {
         supportFinishAfterTransition();
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        tv_page.setText(position + 1 + "/" + userPictures.size());
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 }
