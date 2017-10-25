@@ -15,11 +15,15 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.admin.eathealthy.Account_Page;
 import com.example.admin.eathealthy.CookProxy;
+import com.example.admin.eathealthy.Custom_Food_Filing.CustomFoodFiling;
 import com.example.admin.eathealthy.GetData.GetNutrition;
 import com.example.admin.eathealthy.List_table;
 import com.example.admin.eathealthy.Data_table.MyDBHelper;
@@ -215,6 +219,33 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         }
         return false;
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_logout, menu);
+        return true;
+    }
+
+    //menutItem選擇
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_logout:
+                getSharedPreferences("Login_info", MODE_PRIVATE).edit().clear().commit();
+                Intent intent = new Intent(this, Account_Page.class);
+                startActivity(intent);
+                finish();
+            default:
+                break;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
     //建立今日營養目標資料列
     public void init_User_Today_Nutrition() {

@@ -30,5 +30,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="Theme.AppCompat.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowIsTranslucent">true</item>
+
+
+        <item name="android:windowBackground">@color/trnasparent</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+
+
+        <item name="android:windowNoTitle">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
 
 </resources>
+
