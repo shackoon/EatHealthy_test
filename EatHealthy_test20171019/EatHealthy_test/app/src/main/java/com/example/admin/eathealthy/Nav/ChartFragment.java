@@ -12,9 +12,11 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.eathealthy.R;
 import com.example.admin.eathealthy.Nav.SubChartFragment.HeatChartSubFragment;
@@ -64,16 +66,16 @@ public class ChartFragment extends Fragment implements ViewPager.OnPageChangeLis
 
         FindView(view);
         setTimeSelectLisenter();
-
+        Toast.makeText(getContext(), "OnCreateView", Toast.LENGTH_SHORT).show();
         return view;
     }
 
 
     public void FindView(View view) {
 
-        tv_date = view.findViewById(R.id.chart_tv_date);
-        btn_Left = view.findViewById(R.id.imgbtn_left);
-        btn_Right = view.findViewById(R.id.imgbtn_right);
+        tv_date = (TextView) view.findViewById(R.id.chart_tv_date);
+        btn_Left = (ImageButton) view.findViewById(R.id.imgbtn_left);
+        btn_Right = (ImageButton) view.findViewById(R.id.imgbtn_right);
 
         calendar_start = Calendar.getInstance();
         calendar_end = Calendar.getInstance();
@@ -85,8 +87,8 @@ public class ChartFragment extends Fragment implements ViewPager.OnPageChangeLis
 
         tv_date.setText(startDay + " 到 " + formatter.format(calendar_end.getTimeInMillis() - (24 * 60 * 60 * 1000)).toString());
 
-        mTablayout = view.findViewById(R.id.tab_test);
-        viewPager = view.findViewById(R.id.viewPager);
+        mTablayout = (TabLayout) view.findViewById(R.id.tab_test);
+        viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -124,6 +126,7 @@ public class ChartFragment extends Fragment implements ViewPager.OnPageChangeLis
                 break;
             case 1:
                 heatChartByNutritionSubFragment.setBarChart(heatChartByNutritionSubFragment.setBarDate_Nutrition(startDay, endDay));
+
                 break;
             default:
                 break;
@@ -256,6 +259,12 @@ public class ChartFragment extends Fragment implements ViewPager.OnPageChangeLis
     @Override
     public void onResume() {
         super.onResume();
+        if (heatChartSubFragment.isVisible()) {
+            heatChartSubFragment.setBarChart(heatChartSubFragment.setBarDate_Heat(startDay, endDay));
+            heatChartByNutritionSubFragment.setBarChart(heatChartByNutritionSubFragment.setBarDate_Nutrition(startDay, endDay));
+        }
+
+
     }
 
 
