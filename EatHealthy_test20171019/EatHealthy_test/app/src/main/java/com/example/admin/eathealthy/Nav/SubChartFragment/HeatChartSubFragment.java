@@ -71,7 +71,6 @@ public class HeatChartSubFragment extends Fragment {
 
 
     public ArrayList<BarEntry> setBarDate_Heat(String startDay, String endDay) {
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         //String date[] = new String[7];
 
@@ -109,7 +108,6 @@ public class HeatChartSubFragment extends Fragment {
             mDate1.add(Calendar.DAY_OF_MONTH, 1);
             i++;
         }
-
 
         return barEntries;
     }
@@ -208,9 +206,6 @@ public class HeatChartSubFragment extends Fragment {
         super.onDetach();
 
     }
-
-
-
 
 
 }

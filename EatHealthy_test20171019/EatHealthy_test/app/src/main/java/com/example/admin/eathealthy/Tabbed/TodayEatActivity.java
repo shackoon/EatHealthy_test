@@ -54,13 +54,15 @@ public class TodayEatActivity extends AppCompatActivity {
     private TextView tv_date;
     private ImageButton btn_Left, btn_Right;
     private Calendar calendar_now;
+    private Calendar calendar_today;
 
 
     public void FindView() {
         calendar_now = Calendar.getInstance();
         nowTime = formatter.format(calendar_now.getTime()).toString();
+        calendar_today = Calendar.getInstance();
         tv_date = (TextView) findViewById(R.id.chart_tv_date);
-        tv_date.setText(nowTime);
+        tv_date.setText(whatDay(calendar_now, calendar_today));
         btn_Left = (ImageButton) findViewById(R.id.imgbtn_left);
         btn_Right = (ImageButton) findViewById(R.id.imgbtn_right);
     }
@@ -97,7 +99,7 @@ public class TodayEatActivity extends AppCompatActivity {
 
                                 calendar_now.setTime(setDate);
                                 nowTime = formatter.format(calendar_now.getTime()).toString();
-                                tv_date.setText(nowTime);
+                                tv_date.setText(whatDay(calendar_now, calendar_today));
 
                                 switch (current_position) {
                                     case 0:
@@ -143,7 +145,7 @@ public class TodayEatActivity extends AppCompatActivity {
                 }
 
                 nowTime = formatter.format(calendar_now.getTime()).toString();
-                tv_date.setText(nowTime);
+                tv_date.setText(whatDay(calendar_now, calendar_today));
 
                 switch (current_position) {
                     case 0:
@@ -188,6 +190,35 @@ public class TodayEatActivity extends AppCompatActivity {
         btn_Right.setOnClickListener(onClickListener);
         tv_date.setOnClickListener(onClickListener);
     }
+
+    private String whatDay(Calendar calendar_now, Calendar today) {
+        Calendar c_now = Calendar.getInstance();
+        Calendar c_today = Calendar.getInstance();
+        Date date_now = calendar_now.getTime();
+        Date date_today = today.getTime();
+        String str_now = formatter.format(date_now);
+        String str_today = formatter.format(date_today);
+
+        try {
+            c_now.setTime(formatter.parse(str_now));
+            c_today.setTime(formatter.parse(str_today));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        long day = (c_now.getTimeInMillis() - c_today.getTimeInMillis()) / (1000 * 60 * 60 * 24);
+        if (day >= 0 && day < 1) {
+            return "今天";
+        } else if (day >= 1 && day < 2) {
+            return "明天";
+        } else if (day < 0 && day >= -1) {
+            return "昨天";
+        } else {
+            return nowTime;
+        }
+
+    }
+
 
 
     @Override

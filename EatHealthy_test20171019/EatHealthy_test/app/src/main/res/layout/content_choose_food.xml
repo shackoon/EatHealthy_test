@@ -53,8 +53,8 @@
             <com.example.admin.eathealthy.recyevent.EmptyRecyclerView
                 android:id="@+id/recyclerview_choose_food"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:autofillHints="SoftInputMod" />
+                android:layout_height="match_parent"/>
+                <!--android:autofillHints="SoftInputMod" />-->
 
         </LinearLayout>
 

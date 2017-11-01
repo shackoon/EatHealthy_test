@@ -48,8 +48,8 @@ public class PersonInfoAdapter extends RecyclerView.Adapter<PersonInfoAdapter.Vi
 
         public ViewHolder(View v) {
             super(v);
-            column_name = v.findViewById(R.id.tv_column_name);
-            value = v.findViewById(R.id.tv_value);
+            column_name =(TextView)  v.findViewById(R.id.tv_column_name);
+            value = (TextView) v.findViewById(R.id.tv_value);
         }
 
     }

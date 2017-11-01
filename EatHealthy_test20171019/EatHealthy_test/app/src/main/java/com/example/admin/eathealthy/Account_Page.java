@@ -288,7 +288,7 @@ public class Account_Page extends AppCompatActivity {
                 cv.put("BMI", BMI);//
                 cv.put("Other", "test");
                 cv.put("Login", "no");
-                cv.put(Item_User_Data.FACTOR_COLUMN, "1.3");
+                cv.put(Item_User_Data.FACTOR_COLUMN, "1.375");
                 cv.put(Item_User_Data.PROTEIN_RATIO_COLUMN, "0.12");
                 cv.put(Item_User_Data.FAT_RATIO_COLUMN, "0.25");
                 cv.put(Item_User_Data.CARBOHYDRATE_RATIO_COLUMN, "0.63");

@@ -117,7 +117,7 @@ public class Tab_Other extends Fragment {
     public void FindView(View view) {
         mRecyclerView = (EmptyRecyclerView) view.findViewById(R.id.breakfast_emptyRecyclerView);
         mEmptyView = view.findViewById(R.id.empty_view);
-        pic_recyclerview = view.findViewById(R.id.recycler_picture);
+        pic_recyclerview =(RecyclerView) view.findViewById(R.id.recycler_picture);
 
     }
 

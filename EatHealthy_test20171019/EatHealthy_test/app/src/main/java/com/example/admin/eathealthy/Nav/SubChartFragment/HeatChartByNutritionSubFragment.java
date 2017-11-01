@@ -68,12 +68,11 @@ public class HeatChartByNutritionSubFragment extends Fragment {
     }
 
     public void FindView(View view) {
-        barChart =  view.findViewById(R.id.barchart_fa2);
+        barChart =(BarChart) view.findViewById(R.id.barchart_fa2);
     }
 
 
     public ArrayList<BarEntry> setBarDate_Nutrition(String startDay, String endDay) {
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         Date date1;
         Date date2;
@@ -97,9 +96,9 @@ public class HeatChartByNutritionSubFragment extends Fragment {
 
         String[] weekDays = {"", "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
         int i = 0;
+
         while (mDate1.compareTo(mDate2) < 0) {
             date[i] = weekDays[mDate1.get(Calendar.DAY_OF_WEEK)];
-
             corsor = db.query(User_Nutritional_Goals.TABLE_NAME + account, null, User_Nutritional_Goals.DATE_COLUMN + "=?", new String[]{simpleDateFormat.format(mDate1.getTime())}, null, null, null);
             if (corsor.moveToNext()) {
                 float protein = Float.parseFloat(corsor.getString(corsor.getColumnIndex(User_Nutritional_Goals.NOW_PROTEIN_COLUMN))) * 4;
@@ -114,7 +113,6 @@ public class HeatChartByNutritionSubFragment extends Fragment {
             mDate1.add(Calendar.DAY_OF_MONTH, 1);
             i++;
         }
-
 
         return barEntries;
     }

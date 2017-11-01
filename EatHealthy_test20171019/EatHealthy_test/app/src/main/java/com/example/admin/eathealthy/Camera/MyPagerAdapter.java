@@ -44,7 +44,7 @@ public class MyPagerAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.content_trans, container, false);
-        ImageView imageView = view.findViewById(R.id.img_for_trans);
+        ImageView imageView =(ImageView) view.findViewById(R.id.img_for_trans);
 //        TextView tv_page = view.findViewById(R.id.tv_page);
 //        tv_page.setText(position + 1 + "/" + arrayPic.size());
         Glide.with(imageView.getContext()).load(arrayPic.get(position).getImage()).fitCenter().into(new GlideDrawableImageViewTarget(imageView) {

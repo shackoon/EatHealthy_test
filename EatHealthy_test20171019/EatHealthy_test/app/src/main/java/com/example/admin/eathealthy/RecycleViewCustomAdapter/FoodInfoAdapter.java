@@ -72,7 +72,7 @@ public class FoodInfoAdapter extends RecyclerView.Adapter<FoodInfoAdapter.ViewHo
             super(v);
             column_name = (TextView) v.findViewById(R.id.tv_foodinfo_name);
             value = (TextView) v.findViewById(R.id.tv_foodinfo_value);
-            linearLayout = v.findViewById(R.id.linear_test);
+            linearLayout = (ConstraintLayout) v.findViewById(R.id.linear_test);
         }
 
     }

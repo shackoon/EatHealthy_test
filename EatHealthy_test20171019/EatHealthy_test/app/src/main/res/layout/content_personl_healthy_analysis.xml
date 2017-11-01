@@ -79,25 +79,25 @@
         app:layout_constraintTop_toTopOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="1.0">
 
-        <ImageButton
-            android:id="@+id/ImageButtonKeyIn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:onClick="choosefood"
-            android:scaleType="fitCenter"
-            android:src="@drawable/edit" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/ImageButtonKeyIn"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#00000000"-->
+            <!--android:onClick="choosefood"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/edit" />-->
 
-        <ImageButton
-            android:id="@+id/ImageButtonCamera"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#00000000"
-            android:scaleType="fitCenter"
-            android:onClick="analysis"
-            android:src="@drawable/camera" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/ImageButtonCamera"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="#00000000"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:onClick="analysis"-->
+            <!--android:src="@drawable/camera" />-->
 
         <ImageButton
             android:id="@+id/ImageButtonPicture"
@@ -107,7 +107,7 @@
             android:background="#00000000"
             android:onClick="food_list"
             android:scaleType="fitCenter"
-            android:src="@drawable/album" />
+            android:src="@drawable/edit" />
 
 
     </LinearLayout>

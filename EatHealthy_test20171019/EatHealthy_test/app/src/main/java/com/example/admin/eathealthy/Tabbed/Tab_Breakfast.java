@@ -119,7 +119,6 @@ public class Tab_Breakfast extends Fragment {
         //Toast.makeText(getContext(), Account + "!!", Toast.LENGTH_SHORT).show();
 
 
-
         FindView(view);
         setFoodRecyclerView(view);
         setPicRecyclerView(view);
@@ -131,7 +130,7 @@ public class Tab_Breakfast extends Fragment {
     public void FindView(View view) {
         mRecyclerView = (EmptyRecyclerView) view.findViewById(R.id.breakfast_emptyRecyclerView);
         mEmptyView = view.findViewById(R.id.empty_view);
-        pic_recyclerview = view.findViewById(R.id.recycler_picture);
+        pic_recyclerview = (RecyclerView) view.findViewById(R.id.recycler_picture);
 
     }
 
@@ -344,11 +343,14 @@ public class Tab_Breakfast extends Fragment {
 
         if (requestCode == ACTIVITY_START_CAMERA_APP && resultCode == RESULT_OK) {
 
+            //Bitmap bm = BitmapFactory.decodeFile(mImageFileLocation);
+            //Toast.makeText(getContext(), bm.getByteCount() / 1024 / 1024 + "MB" + "h:" + bm.getHeight() + "w:" + bm.getWidth(), Toast.LENGTH_SHORT).show();
 
             Tiny.BitmapCompressOptions options = new Tiny.BitmapCompressOptions();
             Tiny.getInstance().source(mImageFileLocation).asBitmap().withOptions(options).compress(new BitmapCallback() {
                 @Override
                 public void callback(boolean isSuccess, Bitmap bitmap) {
+                    //Toast.makeText(getContext(), bitmap.getByteCount() / 1024 / 1024 + "MB " + "h:" + bitmap.getHeight() + "w:" + bitmap.getWidth(), Toast.LENGTH_SHORT).show();
                     ContentValues cv = new ContentValues();
                     cv.put(User_Picture_Data.ACCOUNT_COLUMN, Account);
                     cv.put(User_Picture_Data.PICTURE_COLUMN, image_add_toByte(bitmap));
@@ -357,7 +359,6 @@ public class Tab_Breakfast extends Fragment {
                     cv.put(User_Picture_Data.DINING_TIME_COLUMN, TAB_BREAKFAST);
                     cv.put(User_Picture_Data.DATE_COLUMN, select_time);
                     db.insert(User_Picture_Data.TABLE_NAME + Account, null, cv);
-
                     picDataset.clear();
                     picDataset.addAll(userTodayEat.getPictureData(select_time));
                     userPictureAdapter.notifyItemInserted(userPictureAdapter.getItemCount());

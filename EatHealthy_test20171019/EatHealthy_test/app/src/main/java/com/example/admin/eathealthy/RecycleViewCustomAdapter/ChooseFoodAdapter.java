@@ -50,9 +50,9 @@ public class ChooseFoodAdapter extends RecyclerView.Adapter<ChooseFoodAdapter.Vi
 
         public ViewHolder(View v) {
             super(v);
-            nutrition_name = v.findViewById(R.id.textView_nutrition);
-            k_cal = v.findViewById(R.id.textView_quantity);
-            food_copy = v.findViewById(R.id.textView_copy);
+            nutrition_name = (TextView) v.findViewById(R.id.textView_nutrition);
+            k_cal = (TextView) v.findViewById(R.id.textView_quantity);
+            food_copy = (TextView) v.findViewById(R.id.textView_copy);
 
 
         }
