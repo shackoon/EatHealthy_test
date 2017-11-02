@@ -66,7 +66,7 @@ public class ChartFragment extends Fragment implements ViewPager.OnPageChangeLis
 
         FindView(view);
         setTimeSelectLisenter();
-        Toast.makeText(getContext(), "OnCreateView", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "OnCreateView", Toast.LENGTH_SHORT).show();
         return view;
     }
 
